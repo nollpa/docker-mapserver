@@ -16,7 +16,7 @@ RUN --mount=type=cache,target=/var/cache,sharing=locked \
         clang libprotobuf-c-dev protobuf-c-compiler libharfbuzz-dev libcairo2-dev librsvg2-dev \
     && ln -s /usr/lib/*-linux-gnu/libproj.so.*[0] $(echo /usr/lib/*-linux-gnu)/libproj.so
 
-ARG MAPSERVER_BRANCH=master
+ARG MAPSERVER_BRANCH=main
 ARG MAPSERVER_REPO=https://github.com/mapserver/mapserver
 
 RUN git clone ${MAPSERVER_REPO} --branch=${MAPSERVER_BRANCH} --depth=100 /src
